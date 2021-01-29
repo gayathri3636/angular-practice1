@@ -1,0 +1,22 @@
+<h2>Success Component</h2>
+
+<!--using event binding one way $event -->
+<!--<input type="text" (input)="onUpdateUser($event)" /> -->
+
+<label>username:</label>
+<input type="text" [(ngModel)]="username" /><br/>
+<button  type="submit" (click)="onUserlogin()">Add new user</button>
+<p *ngIf="loggedIn; else noserver">Entered username is {{username}}</p>
+
+<!-- Local reference starts with# and ng-template is used to display else part -->
+<ng-template #noserver>
+<p>No username type something to enter username</p>
+</ng-template>
+
+<!--property binding innerText property sets or returns the text content of the specified node, and all its descendants.   -->
+<!--<h4 [innerText]="loggedIn"></h4> -->
+<!-- string interpolation  -->
+
+<h4>Hello, {{onLogin}}</h4>
+<h2 [ngStyle] = "{backgroundColor: getColor()}">server status is {{serverstatus}}<h2>
+<h2 [ngClass] = "{online: serverstatus === 'online'}">server status is {{serverstatus}}<h2>

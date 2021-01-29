@@ -1,0 +1,5 @@
+<h2>user component</h2>
+<label>username:</label>
+<input type="text" [(ngModel)]="username" />
+<button type="button" (click)="onAddUser()" [disabled] = "!username">Add user</button>
+<p *ngFor="let user of users">{{user}}</p>
